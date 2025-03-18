@@ -6,11 +6,11 @@ import tempfile
 import os
 
 # Load Local AI Model
-model_path = "models/mistral-7b.gguf"  
+model_path = "models/mistral-7b-v0.1.Q4_K_M.gguf"  
 if not os.path.exists(model_path):
     raise FileNotFoundError(f"Model file not found at {model_path}")
 # Update with your model path
-model = gpt4all.GPT4All(model_path, allow_download=True)
+model = gpt4all.GPT4All(model_path, allow_download=False)
 
 # Connect to SQLite database
 conn = sqlite3.connect("ai_memory.db")
